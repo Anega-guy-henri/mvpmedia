@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Échange de vidéos</title>
+<style>
+.video-container {
+display: flex;
+}
+.big-video {
+/* flex: 1; */
+}
+.small-video {
+/* flex: 0 0 5%; */
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<h1>Échange de vidéos</h1>
+<div class="video-container">
+<div class="big-video">
+<h2>Grande vidéo</h2>
+<video id="big-video" width="400" src="vid/VID-20231225-WA0029.mp4"></video>
+</div>
+<div class="small-video" onclick="swapVideos(0)">
+<h3>Petite vidéo 1</h3>
+<video id="small-video1" width="200" src="VID-20231224-WA0036.mp4" controls></video>
+</div>
+<div class="small-video" onclick="swapVideos(1)">
+<h3>Petite vidéo 2</h3>
+<video id="small-video2" width="200" src="vid/009 - Les constantes.mp4" controls></video>
+</div>
+<div class="small-video"  onclick="swapVideos(2)">
+<h3>Petite vidéo 3</h3>
+<video id="small-video3" src="VID-20231224-WA0036.mp4" width="200" controls></video>
+</div>
+<div class="small-video" onclick="swapVideos(3)">
+<h3>Petite vidéo 4</h3>
+<video id="small-video4" src="vid/VID-20231225-WA0029.mp4" width="200" controls></video>
+</div>
+</div>
+<script>
+var bigVideo = document.getElementById('big-video');
+var smallVideos = [
+document.getElementById('small-video1'),
+document.getElementById('small-video2'),
+document.getElementById('small-video3'),
+document.getElementById('small-video4')
+];
+function swapVideos(index) {
+var clickedVideo = smallVideos[index];
+var tempSrc = bigVideo.src;
+bigVideo.src = clickedVideo.src;
+clickedVideo.src = tempSrc;
+}
+</script>
+</body>
+</html>

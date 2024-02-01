@@ -1,0 +1,20 @@
+@media screen and (max-width:1240px) {
+    .contener{
+        width: 95vw;
+    }
+    .right video, .right img{
+        width: 200px;
+    }
+    body{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:900px) {
+    .contener{
+        flex-direction: column !important;
+        color: red;
+    }
+    .left-bottom{
+        height: 400px;
+    }
+}
